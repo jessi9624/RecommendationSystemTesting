@@ -13,7 +13,7 @@ class Basictest(TestCase):
     def test_model(self):
         d=self.blog
         self.assertTrue(isinstance(d,Contact1))
-        self.assertEqual(str(d),'chandan')
+        self.assertEqual(str(d),'chand')
     
     def test_model1(self):
         e=self.blog1
