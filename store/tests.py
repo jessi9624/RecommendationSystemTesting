@@ -16,6 +16,6 @@ class Basictest(TestCase):
     def test_model1(self):
         e=self.blog1
         self.assertTrue(isinstance(e,Category))
-        self.assertEqual(str(e),'Earphones') 
+        self.assertEqual(str(e),'Earphone') 
      
         
