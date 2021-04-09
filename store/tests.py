@@ -19,10 +19,10 @@ class Basictest(TestCase):
         e=self.blog1
         self.assertTrue(isinstance(e,Category))
         self.assertEqual(str(e),'Earphones') 
-
     def test_model2(self):
         f=self.sign
         self.assertTrue(isinstance(f,Customer))
         self.assertEqual(str(f),'Customer object (1)')
      
+    
         
