@@ -13,8 +13,8 @@ import json
 from store.models.category import Category
 
 import pandas as pd
-import random
-from random import randint
+#import random
+from random2 import randint
 from datetime import date, datetime
 import numpy as np
 
