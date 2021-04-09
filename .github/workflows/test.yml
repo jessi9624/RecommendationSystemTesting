@@ -1,33 +1,33 @@
-name: Django Tests
+name : Django Tests
 
-on:
+on :
   push:
-    branches: 
+    branches:
       - main
+  
   pull_request:
-    branches: 
+    branches:
       - main
-
-jobs:
+    
+jobs:   
   build:
-
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.8
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-    - name: Coverage report
-        run: |
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+      - name : Install dependencies
+        run : |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Coverage Report
+        run : |
           pip install coverage
           coverage run manage.py test
           coverage report
-    - name: Django testing
-      run: |
-        python manage.py test
-
+      - name : Django Testing
+        run: |
+          python3 manage.py test
