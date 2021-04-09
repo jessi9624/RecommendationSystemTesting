@@ -13,7 +13,8 @@ import json
 
 import pandas as pd
 import random
-from random import randint
+#from random2 
+import randint
 from datetime import date
 import numpy as np
 from datetime import datetime

@@ -24,8 +24,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install django-mathfilters
           pip install pandas
-          pip install random
-          pip install random 
           pip install datetime 
           pip install numpy 
           pip install iteration_utilities 
