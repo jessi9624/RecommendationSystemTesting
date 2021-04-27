@@ -13,15 +13,15 @@ import json
 from store.models.category import Category
 
 import pandas as pd
-#import random
-from random2 import randint
-from datetime import date, datetime
+import random
+from random import randint
+from datetime import date, datetime,timedelta
 import numpy as np
 
 def festival(request):
-  todaydm= datetime.now().date().strftime("%m/%d")
-  festivals= pd.read_csv('C:/Users/Chandan/Downloads/project/project/project/eshopdjango-master/festivals.csv')
-  category= pd.read_csv('C:/Users/Chandan/Downloads/project/project/project/eshopdjango-master/ctgryProduct_details.csv')
+  todaydm= (datetime.now() + timedelta(days=7)).date().strftime("%m/%d")#datetime.now().date().strftime("%m/%d")
+  festivals= pd.read_csv('app/festivals.csv')
+  category= pd.read_csv('app/ctgryProduct_details.csv')
   ctgryid=[]
   for i in range(0,len(festivals['Festivals'])):
     festivals['Dates'][i]= pd.to_datetime(festivals['Dates'][i]).strftime("%m/%d")

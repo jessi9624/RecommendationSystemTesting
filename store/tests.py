@@ -6,14 +6,14 @@ from store.models.customer  import Customer
 # Create your tests here.
 class Basictest(TestCase):
     def setUp(self):
-        self.blog=Contact1.objects.create(Relation='father',name='chandan',dob='2021-04-01',category='Earphones')
+        self.blog=Contact1.objects.create(Relation='father',name='abc',dob='2021-04-01',category='Earphones')
         self.blog1=Category.objects.create(name='Earphones')
-        self.sign=Customer.objects.create(first_name='chandan',last_name='kamal',phone='1234567891',dob='2021-03-01',email='test1@gmail.com',password='123456')
+        self.sign=Customer.objects.create(first_name='chandan',last_name='kamal',phone='1234567891',dob='2000-03-01',email='test1@gmail.com',password='123456')
     
     def test_model(self):
         d=self.blog
         self.assertTrue(isinstance(d,Contact1))
-        self.assertEqual(str(d),'chand')
+        self.assertEqual(str(d),'abc')
     
     def test_model1(self):
         e=self.blog1

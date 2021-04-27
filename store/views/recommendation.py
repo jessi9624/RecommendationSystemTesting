@@ -13,10 +13,11 @@ import json
 
 import pandas as pd
 import random
-from random2 import randint
+from random import randint
 from datetime import date
 import numpy as np
-from datetime import datetime
+from datetime import datetime,timedelta
+import joblib
 from iteration_utilities import duplicates
 
 
@@ -25,19 +26,19 @@ def recommendation(request):
   customer1 = request.session.get('customer')
   print(customer1)
   
-  df= pd.read_csv('C:/Users/Chandan/Downloads/project/project/project/eshopdjango-master/pbrght.csv')
+  df= pd.read_csv('app/eshopdjango-master/pbrght.csv')
   #print(df)
   df1= df.groupby('id')['prod_brought'].apply(list).reset_index()
   #print(df1)
-  pid= pd.read_csv('C:/Users/Chandan/Downloads/project/project/project/eshopdjango-master/Product_details.csv')
+  pid= pd.read_csv('app/Product_details.csv')
   #print(pid)
-  df5= pd.read_csv('C:/Users/Chandan/Downloads/project/project/project/eshopdjango-master/ctgryProduct_details.csv')
+  df5= pd.read_csv('app/ctgryProduct_details.csv')
   #print(df5)
   #########new recmndtn
-  df6= pd.read_csv('C:/Users/Chandan/Downloads/project/project/project/eshopdjango-master/pbrght1.csv')
+  df6= pd.read_csv('app/pbrght1.csv')
   grppbrght = df6.groupby('c_id')['prod_brought'].apply(list).reset_index()
   #print(grppbrght)
-  relation = pd.read_csv('C:/Users/Chandan/Downloads/project/project/project/eshopdjango-master/relation.csv')
+  relation = pd.read_csv('app/relation.csv')
   #print(relation)
   for i in range(0,len(relation['name'])):
     relation['dob'][i]= pd.to_datetime(relation['dob'][i]).strftime("%m/%d")
@@ -111,11 +112,12 @@ def recommendation(request):
 
 
   id= customer1#int(input("id:"))
-  cbday= pd.read_csv('C:/Users/Chandan/Downloads/project/project/project/eshopdjango-master/custbdayd.csv')
+  cbday= pd.read_csv('app/custbdayd.csv')
   x=len(cbday['id'])
   from datetime import datetime
   today = datetime.now().date().strftime("%m/%d/%Y")
-  todaydm= datetime.now().date().strftime("%m/%d")
+  todaydm= (datetime.now() + timedelta(days=7)).date().strftime("%m/%d")#datetime.now().date().strftime("%m/%d")
+  print(todaydm)
   for i in range(0,len(cbday['id'])):
     cbday['birthday'][i]= pd.to_datetime(cbday['birthday'][i]).strftime("%m/%d")
   #print(cbday)

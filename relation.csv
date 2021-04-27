@@ -1,9 +1,9 @@
 relation,name,dob,c_id,user_id
-Mother,sunaina,2/5/1957,2,27
-Father,ram,2/12/1978,1,24
-Sister,gayatri,4/6/1999,2,31
+Mother,sunaina,02-05-1957,2,27
+Father,ram,02-12-1978,1,24
+Sister,gayatri,04-06-1999,2,31
 Brother,raju,12/26/1988,3,27
-Husband,kashish,11/10/2011,4,31
-Wife,kiara,4/8/2021,4,21
-Mother,naina,4/9/1957,2,25
-Sister,maya,2/3/1967,3,37
+Husband,kashish,11-10-2011,4,31
+Wife,kiara,04-08-2021,4,21
+Mother,naina,04-30-1987,2,25
+Sister,maya,02-03-1991,3,37
